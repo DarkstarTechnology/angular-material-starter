@@ -1,0 +1,113 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+@media screen and (min-aspect-ratio: 1/1) {
+  .container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+      "top sidebox"
+      "middle  ."
+      "bottom  .";
+    
+    
+  }
+  
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    /* Set the order to 1 so it comes before the sidebar in landscape mode */
+    order: 1;
+  }
+  
+  .top-box {
+    margin: 10px;
+  
+    text-align: center;
+    padding: 8px;
+    grid-area: top;
+  }
+  .middle-box {
+    margin: 10px;
+    text-align: center;
+    padding: 8px;
+    grid-area: middle;
+  }
+  .bottom-box {
+    margin: 10px;
+    text-align: center;
+    padding: 8px;
+    grid-area: bottom;
+  }
+  .sidebox {
+  
+    padding: 10px;
+    justify-self: start;
+    align-self:center;
+    /* Set the order to 2 so it comes after the content in landscape mode */
+    grid-area: sidebox;
+  }
+  
+
+}
+
+/* Portrait orientation styles */
+@media screen and (max-aspect-ratio: 1/1) {
+  .container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    
+    
+  }
+  
+ 
+  .top-box {
+    margin: 10px;
+  
+    text-align: center;
+    padding: 8px;
+    grid-area: top;
+  }
+  .middle-box {
+    margin: 10px;
+    text-align: center;
+    padding: 8px;
+    grid-area: middle;
+  }
+  .bottom-box {
+    margin: 10px;
+    text-align: center;
+    padding: 8px;
+    grid-area: bottom;
+  }
+  .sidebox {
+  
+    padding: 10px;
+    justify-self: start;
+    align-self:center;
+    /* Set the order to 2 so it comes after the content in landscape mode */
+    grid-area: sidebox;
+  }
+  
+}

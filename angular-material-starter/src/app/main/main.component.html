@@ -1,0 +1,92 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item
+      (click)="navigate(item.route)"
+      *ngFor="let item of navItems">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        <div matListItemTitle>{{item.title}}</div>
+        <div></div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>angular-material-starter</span>
+    </mat-toolbar>
+    <div class="container">
+      <div class="sidebox">
+        <svg width="200" height="100">
+          <rect x="0" y="0" width="200" height="50" fill="none" stroke="#7aa3e5" stroke-width="2" />
+          <text x="30" y="30" fill="#7aa3e5">Select Box</text>
+        </svg>
+      </div>
+      
+        <div class="top-box">
+          <svg width="400" height="300">
+            <!-- X and Y axes -->
+            <line x1="20" y1="250" x2="350" y2="250" stroke="black" stroke-width="2" />
+            <line x1="20" y1="50" x2="20" y2="250" stroke="black" stroke-width="2" />
+          
+            <!-- Data points -->
+            <circle cx="50" cy="200" r="5" fill="#7aa3e5" />
+            <circle cx="100" cy="120" r="5" fill="#7aa3e5" />
+            <circle cx="150" cy="150" r="5" fill="#7aa3e5" />
+            <circle cx="200" cy="175" r="5" fill="#7aa3e5" />
+            <circle cx="250" cy="125" r="5" fill="#7aa3e5" />
+            <!-- Connect data points with lines -->
+            <polyline points="50,200 100,120 150,150 200,175 250,125" fill="none" stroke="#a8385d" stroke-width="2" />
+          </svg>
+        </div>
+        <div class="middle-box">
+          <svg width="400" height="300">
+            <!-- X and Y axes -->
+            <line x1="20" y1="250" x2="350" y2="250" stroke="black" stroke-width="2" />
+            <line x1="20" y1="50" x2="20" y2="250" stroke="black" stroke-width="2" />
+          
+            <!-- Data points -->
+            <circle cx="50" cy="200" r="5" fill="#7aa3e5" />
+            <circle cx="100" cy="120" r="5" fill="#7aa3e5" />
+            <circle cx="150" cy="150" r="5" fill="#7aa3e5" />
+            <circle cx="200" cy="175" r="5" fill="#7aa3e5" />
+            <circle cx="250" cy="125" r="5" fill="#7aa3e5" />
+            <!-- Connect data points with lines -->
+            <polyline points="50,200 100,120 150,150 200,175 250,125" fill="none" stroke="#a8385d" stroke-width="2" />
+          </svg>
+        </div>
+        <div class="bottom-box">
+          <svg width="400" height="300">
+            <!-- X and Y axes -->
+            <line x1="20" y1="250" x2="350" y2="250" stroke="black" stroke-width="2" />
+            <line x1="20" y1="50" x2="20" y2="250" stroke="black" stroke-width="2" />
+          
+            <!-- Data points -->
+            <circle cx="50" cy="200" r="5" fill="#7aa3e5" />
+            <circle cx="100" cy="120" r="5" fill="#7aa3e5" />
+            <circle cx="150" cy="150" r="5" fill="#7aa3e5" />
+            <circle cx="200" cy="175" r="5" fill="#7aa3e5" />
+            <circle cx="250" cy="125" r="5" fill="#7aa3e5" />
+            <!-- Connect data points with lines -->
+            <polyline points="50,200 100,120 150,150 200,175 250,125" fill="none" stroke="#a8385d" stroke-width="2" />
+          </svg>
+        </div>
+    
+      
+    </div>
+   
+    
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
